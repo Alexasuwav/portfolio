@@ -357,12 +357,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const darkModeToggle = document.getElementById('dark-mode-toggle');
             const body = document.body;
+            const profilePic = document.getElementById('profile-pic');
 
             darkModeToggle.addEventListener('click', function() {
                 body.classList.toggle('dark-mode');
                 const icon = darkModeToggle.querySelector('i');
                 icon.classList.toggle('fa-moon');
                 icon.classList.toggle('fa-sun');
+
+                   // Cambiar la imagen según el modo
+            if (body.classList.contains('dark-mode')) {
+                profilePic.src = 'imagenes/Alex2.jpg';
+            } else {
+                profilePic.src = 'imagenes/Alex.jpg';
+            }
             });
 
             // Smooth scrolling for navbar links
@@ -389,5 +397,8 @@
         });
     });
     </script>
+
+
+
 </body>
 </html>
